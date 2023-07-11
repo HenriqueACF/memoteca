@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {hasOneOfTypes} from "@angular/core/schematics/utils/typescript/symbol";
 
 @Component({
   selector: 'app-criar-pensamento',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarPensamentoComponent implements OnInit {
 
+  pensamento = {
+    id: '1',
+    conteudo: 'aprendendo angular',
+    autoria: 'Henrique Assis',
+    modelo: ''
+  }
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  criarPensamento(){
+    alert("funcionou")
+  }
+
+  cancelar(){
+    alert('Cancelou')
+  }
+
+  protected readonly hasOneOfTypes = hasOneOfTypes;
 }
